@@ -23,5 +23,41 @@
  * @returns {number} The ticket price, or -1 for invalid input
  */
 export function getTicketPrice(age, isWeekend) {
-  // Your code here
+  if(typeof age !== "number"|| age < 0){
+    return -1;
+  }
+let price ;
+let category;
+
+ if(age <= 12){
+  category= "child"
+  price = 8;
+  console.log(`category:${category},Age:${age}`);
+ }
+ else if(age <= 17){
+  category= "Teens"
+  price = 12;
+  console.log(`category:${category},Age:${age}`);  
+ }
+ else if(age <= 59){
+  category= "Adults"
+  price = 15;
+    console.log(`category:${category},Age:${age}`);
+ }
+ else{
+  category= "seniors"
+  price = 10
+  console.log(`category:${category},Age:${age}`);
+ }
+
+ if(isWeekend === true){
+  price += 3; 
+  console.log(`Category: ${category} (Weekend surcharge applied)`);
+ }
+ else{
+    console.log(`Category: ${category}`);
+ }
+   console.log(`Final Ticket Price: $${price}`);
+
+ return price;
 }
