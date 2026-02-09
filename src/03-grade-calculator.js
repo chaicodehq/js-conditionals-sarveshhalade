@@ -54,4 +54,4 @@ export function calculateGrade(score, hasExtraCredit) {
     return "F";
    }
 
-}
+  }
